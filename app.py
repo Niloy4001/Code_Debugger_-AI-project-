@@ -8,7 +8,7 @@ st.divider()
 
 # sidebar
 with st.sidebar:
-    uploaded_image= st.file_uploader("choose an screenshot",type=["jpg","jpeg","png"],accept_multiple_files=True)
+    uploaded_image= st.file_uploader("Choose screenshot of your code",type=["jpg","jpeg","png"],accept_multiple_files=True)
     if uploaded_image:
         if len(uploaded_image)>3:
             st.error("You can upload at max 3 images")
@@ -36,7 +36,7 @@ if clicked:
         st.error("You must select a solution option")
     else:
         with st.container(border=True):
-            st.header("Your issues")
+            st.header(f"Your {soln}")
             with st.spinner("Your code is debugging"):
                 txt = issue_generator(images_list,soln)
                 st.markdown(txt)
