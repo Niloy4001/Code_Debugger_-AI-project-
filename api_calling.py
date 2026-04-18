@@ -21,7 +21,7 @@ def issue_generator(images,soln_type):
     else:
         response = client.models.generate_content(
             model="gemini-3-flash-preview",
-            contents=[images," give me step by step hints to solve the issue with corrected code. make sure you provided with proper markdown"]
+            contents=[images," give me the solution of the issue with corrected code. make sure you provided with proper markdown"]
         )
         return (response.text)
 
